@@ -1,3 +1,4 @@
+import { DialogDemo } from "@/components/dialog_demo";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
       <Button variant={"outline"} size={"icon-lg"}>
         Test
       </Button>
+      <DialogDemo />
     </div>
   );
 }
