@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
-export function DialogDemo() {
+export function DialogOrigin() {
   return (
     <Dialog>
       <form>

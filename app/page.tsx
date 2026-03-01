@@ -1,13 +1,24 @@
-import { DialogDemo } from "@/components/dialog_demo";
+import { DialogExample1 } from "@/components/dialog_example_1";
+import { DialogOrigin } from "@/components/dialog_origin";
 import { Button } from "@/components/ui/button";
+import { Button1 } from "@/components/ui/repeat1/button1";
 
 export default function Home() {
   return (
-    <div className="flex justify-center items-center h-screen gap-4">
-      <Button variant={"outline"} size={"icon-lg"}>
-        Test
-      </Button>
-      <DialogDemo />
+    <div className="flex flex-col justify-center items-center h-screen gap-8">
+      {/* 第一行：按钮 */}
+      <div className="flex gap-4">
+        <Button variant="outline" size="icon-lg" className="overflow-hidden">
+          Button
+        </Button>
+        <Button1 variant="destructive">Button1</Button1>
+      </div>
+
+      {/* 第二行：Dialog */}
+      <div className="flex flex-row gap-2">
+        <DialogOrigin />
+        <DialogExample1 />
+      </div>
     </div>
   );
 }
