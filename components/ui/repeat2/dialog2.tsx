@@ -3,33 +3,33 @@
 import { cn } from "@/lib/utils";
 import { XIcon } from "lucide-react";
 import { Dialog as DialogPrimitive } from "radix-ui";
-import { Button1 } from "./button1";
+import { Button2 } from "./button2";
 
-function Dialog1({
+function Dialog2({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Root>) {
   return <DialogPrimitive.Root data-slot="dialog" {...props} />;
 }
 
-function DialogTrigger1({
+function DialogTrigger2({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Trigger>) {
   return <DialogPrimitive.Trigger data-slot="dialog-trigger" {...props} />;
 }
 
-function DialogPortal1({
+function DialogPortal2({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Portal>) {
   return <DialogPrimitive.Portal data-slot="dialog-portal" {...props} />;
 }
 
-function DialogClose1({
+function DialogClose2({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Close>) {
   return <DialogPrimitive.Close data-slot="dialog-close" {...props} />;
 }
 
-function DialogOverlay1({
+function DialogOverlay2({
   className,
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Overlay>) {
@@ -45,7 +45,7 @@ function DialogOverlay1({
   );
 }
 
-function DialogContent1({
+function DialogContent2({
   className,
   children,
   showCloseButton = true,
@@ -54,8 +54,8 @@ function DialogContent1({
   showCloseButton?: boolean;
 }) {
   return (
-    <DialogPortal1 data-slot="dialog-portal">
-      <DialogOverlay1 />
+    <DialogPortal2>
+      <DialogOverlay2 />
       <DialogPrimitive.Content
         data-slot="dialog-content"
         className={cn(
@@ -75,21 +75,21 @@ function DialogContent1({
           </DialogPrimitive.Close>
         )}
       </DialogPrimitive.Content>
-    </DialogPortal1>
+    </DialogPortal2>
   );
 }
 
-function DialogHeader1({ className, ...props }: React.ComponentProps<"div">) {
+function DialogHeader2({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="dialog-header"
       className={cn("flex flex-col gap-2 text-center sm:text-left", className)}
       {...props}
-    />
+    ></div>
   );
 }
 
-function DialogFooter1({
+function DialogFooter2({
   className,
   showCloseButton = false,
   children,
@@ -109,33 +109,35 @@ function DialogFooter1({
       {children}
       {showCloseButton && (
         <DialogPrimitive.Close asChild>
-          <Button1 variant="outline">Close</Button1>
+          <Button2 variant={"outline"}>Close</Button2>
         </DialogPrimitive.Close>
       )}
     </div>
   );
 }
 
-function DialogTitle1({
+function DialogTitle2({
   className,
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Title>) {
   return (
     <DialogPrimitive.Title
       data-slot="dialog-title"
+      // leading: 行间距 行高为1
       className={cn("text-lg leading-none font-semibold", className)}
       {...props}
     />
   );
 }
 
-function DialogDescription1({
+function DialogDescription2({
   className,
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Description>) {
   return (
     <DialogPrimitive.Description
       data-slot="dialog-description"
+      //  text-muted-foreground 辅助色
       className={cn("text-muted-foreground text-sm", className)}
       {...props}
     />
@@ -143,12 +145,14 @@ function DialogDescription1({
 }
 
 export {
-  Dialog1,
-  DialogTrigger1,
-  DialogClose1,
-  DialogContent1,
-  DialogHeader1,
-  DialogFooter1,
-  DialogTitle1,
-  DialogDescription1,
+  Dialog2,
+  DialogClose2,
+  DialogContent2,
+  DialogDescription2,
+  DialogFooter2,
+  DialogHeader2,
+  DialogOverlay2,
+  DialogPortal2,
+  DialogTitle2,
+  DialogTrigger2,
 };

@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { DialogTitle } from "./ui/dialog";
 import { Button1 } from "./ui/repeat1/button1";
 import {
@@ -11,13 +13,22 @@ import {
 } from "./ui/repeat1/dialog1";
 
 export function DialogExample1() {
+  const [open, setOpen] = useState(false);
+
+  function handleSumbit(e: React.SubmitEvent) {
+    e.preventDefault();
+
+    console.log("Submit 成功");
+    setOpen(false);
+  }
   return (
-    <Dialog1>
-      <form>
-        <DialogTrigger1 asChild>
-          <Button1 variant="default">Open Dialog1</Button1>
-        </DialogTrigger1>
-        <DialogContent1 className="dark sm:max-w-sm bg-background text-foreground">
+    // onOpenChange: 改变open的状态
+    <Dialog1 open={open} onOpenChange={setOpen}>
+      <DialogTrigger1 asChild>
+        <Button1 variant="default">Open Dialog1</Button1>
+      </DialogTrigger1>
+      <DialogContent1 className="dark sm:max-w-sm bg-background text-foreground">
+        <form onSubmit={handleSumbit}>
           <DialogHeader1>
             <DialogTitle>Edit Profile</DialogTitle>
             <DialogDescription1>
@@ -31,8 +42,8 @@ export function DialogExample1() {
             </DialogClose1>
             <Button1 type="submit">Save changes</Button1>
           </DialogFooter1>
-        </DialogContent1>
-      </form>
+        </form>
+      </DialogContent1>
     </Dialog1>
   );
 }
