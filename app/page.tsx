@@ -1,11 +1,13 @@
 import { DialogExample1 } from "@/components/dialog_example_1";
 import { DialogExample2 } from "@/components/dialog_example_2";
 import { DialogExample3 } from "@/components/dialog_example_3";
+import { DialogExample4 } from "@/components/dialog_example_4";
 import { DialogOrigin } from "@/components/dialog_origin";
 import { Button } from "@/components/ui/button";
 import { Button1 } from "@/components/ui/repeat1/button1";
 import { Button2 } from "@/components/ui/repeat2/button2";
 import { Button3 } from "@/components/ui/repeat3/button3";
+import { Button4 } from "@/components/ui/repeat4/button4";
 
 export default function Home() {
   return (
@@ -18,6 +20,7 @@ export default function Home() {
         <Button1 variant="destructive">Button1</Button1>
         <Button2 variant={"ghost"}>Button2</Button2>
         <Button3 variant={"link"}>Button3</Button3>
+        <Button4 variant={"outline"}>Button4</Button4>
       </div>
 
       {/* 第二行：Dialog */}
@@ -26,6 +29,7 @@ export default function Home() {
         <DialogExample1 />
         <DialogExample2 />
         <DialogExample3 />
+        <DialogExample4 />
       </div>
     </div>
   );
